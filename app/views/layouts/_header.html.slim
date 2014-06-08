@@ -1,17 +1,30 @@
-.row
-  .large-12.columns
-    .panel
-      header
-        = link_to "VEIL", root_path
-
-.row
-  .large-12.columns
-    .panel
-      nav
-        ul
-          li= link_to "People", people_path
-          li= link_to "Research", research_path
-          li= link_to "Software", software_path
-          li= link_to "Publications", publications_path
-          li= link_to "Pictures", pictures_path
-          li= link_to "Links", links_path
+.contain-to-grid
+  nav.top-bar data-topbar="" 
+    ul.title-area
+      li.name
+        h1
+          a= link_to "VEIL", root_path
+      /! Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone
+      li.toggle-topbar.menu-icon
+        a href="#" 
+          span Menu
+    section.top-bar-section
+      /! Right Nav Section
+      ul.right
+        li.has-dropdown
+          = link_to "People", people_path
+          ul.dropdown
+            li= link_to "Collaborators", "#"
+            li= link_to "Grad students", "#"
+            li= link_to "Undergrads", "#"
+            li= link_to "Former members", "#"
+        li.has-dropdown
+          = link_to "Research", research_path
+          ul.dropdown
+            li= link_to "Foo", "#"
+            li= link_to "Bar", "#"
+        li= link_to "Software", software_path
+        li= link_to "Publications", publications_path
+        li= link_to "Pictures", pictures_path
+        li= link_to "Links", links_path
+        li= link_to "Contact", contact_path
