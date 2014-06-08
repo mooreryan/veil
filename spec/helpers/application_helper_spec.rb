@@ -15,4 +15,15 @@ describe ApplicationHelper do
       expect(full_title('')).not_to match(/\|/)
     end
   end
+
+  describe "lorem" do
+    it 'starts with the lorem text' do
+      expect(lorem).to start_with('Lorem ipsum dolor sit amet, ')
+    end
+
+    it "is followed by a lower case letter" do
+      lorem_rest = lorem.gsub(/^Lorem ipsum dolor sit amet, /)
+      expect(lorem_rest.first).to match(/[a-z]/)
+    end
+  end
 end

@@ -53,3 +53,4 @@ end
 
 gem 'slim-rails'
 gem 'foundation-rails'
+gem 'betterlorem'
