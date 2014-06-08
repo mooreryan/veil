@@ -52,3 +52,4 @@ group :production do
 end
 
 gem 'slim-rails'
+gem 'foundation-rails'

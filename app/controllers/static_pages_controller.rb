@@ -7,4 +7,22 @@ class StaticPagesController < ApplicationController
 
   def about
   end
+
+  def people
+  end
+
+  def research
+  end 
+
+  def software
+  end
+
+  def publications
+  end
+
+  def pictures
+  end
+
+  def links
+  end
 end
