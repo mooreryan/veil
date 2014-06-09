@@ -15,6 +15,22 @@ class StaticPagesController < ApplicationController
     @formers = Person.where(p_type: "former")
   end
 
+  def grads
+    @grads = Person.where(p_type: "grad")
+  end
+
+  def undergrads
+    @undergrads = Person.where(p_type: "undergrad")
+  end
+
+  def collabs
+    @collabs = Person.where(p_type: "collab")
+  end
+
+  def formers
+    @formers = Person.where(p_type: "former")
+  end
+
   def research
   end 
 

@@ -5,7 +5,13 @@ Rails.application.routes.draw do
 
   match '/about', to: 'static_pages#about', via: :get
   match '/contact', to: 'static_pages#contact', via: :get
+
   match '/people', to: 'static_pages#people', via: :get
+  match '/grads', to: 'static_pages#grads', via: :get
+  match '/collabs', to: 'static_pages#collabs', via: :get
+  match '/undergrads', to: 'static_pages#undergrads', via: :get
+  match '/formers', to: 'static_pages#formers', via: :get
+
   match '/research', to: 'static_pages#research', via: :get
   match '/software', to: 'static_pages#software', via: :get
   match '/publications', to: 'static_pages#publications', via: :get

@@ -19,7 +19,21 @@ describe "Static pages" do
 
     click_link 'People'
     expect(page).to have_title(full_title('People'))
+
+    pending("specify difference between the two people links")
     
+    # click_link 'Grad students'
+    # expect(page).to have_title(full_title('Grad students'))
+
+    # click_link 'Undergrads'
+    # expect(page).to have_title(full_title('Undergrads'))
+
+    # click_link 'Collaborators'
+    # expect(page).to have_title(full_title('Collaborators'))
+
+    # click_link 'Former members'
+    # expect(page).to have_title(full_title('Former members'))
+
     click_link 'Research'
     expect(page).to have_title(full_title('Research'))
 
@@ -44,6 +58,12 @@ describe "Static pages" do
     it { should have_title(full_title(page_title)) }
   end
 
+  shared_examples_for "all people pages" do
+    it "has the people link panel" do
+      pending
+    end
+  end
+
   describe "Home page" do
     before { visit root_path }
     let(:heading) { 'VEIL' }
@@ -64,12 +84,94 @@ describe "Static pages" do
     let(:all_people) { Person.all }
 
     it_should_behave_like "all static pages"
+    it_should_behave_like "all people pages"
     it { should have_title('People') }
 
     it "lists all the people" do
       all_people.each do |person|
-        expect(page).to have_selector('p', text: person.name)
+        expect(page).to have_selector('li', text: person.name)
       end
     end
   end
+
+  describe "Grad students page" do
+    before do 
+      visit grads_path
+    end
+
+    let(:heading) { "Grad students" }
+    let(:page_title) { "Grad students" }
+    let(:all_grads) { Person.where(p_type: "grad") }
+
+    it_should_behave_like "all static pages"
+    it_should_behave_like "all people pages"
+    it { should have_title("Grad students") }
+
+    it "lists all the grad students" do
+      all_grads.each do |person|
+        expect(page).to have_selector('li', text: person.name)
+      end
+    end
+  end
+
+  describe "Undergrads page" do
+    before do 
+      visit undergrads_path
+    end
+
+    let(:heading) { "Undergrads" }
+    let(:page_title) { "Undergrads" }
+    let(:all_undergrads) { Person.where(p_type: "undergrad") }
+
+    it_should_behave_like "all static pages"
+    it_should_behave_like "all people pages"
+    it { should have_title("Undergrads") }
+
+    it "lists all the grad students" do
+      all_undergrads.each do |person|
+        expect(page).to have_selector('li', text: person.name)
+      end
+    end
+  end
+
+  describe "Collaborators page" do
+    before do 
+      visit collabs_path
+    end
+
+    let(:heading) { "Collaborators" }
+    let(:page_title) { "Collaborators" }
+    let(:all_collabs) { Person.where(p_type: "collab") }
+
+    it_should_behave_like "all static pages"
+    it_should_behave_like "all people pages"
+    it { should have_title("Collaborators") }
+
+    it "lists all the grad students" do
+      all_collabs.each do |person|
+        expect(page).to have_selector('li', text: person.name)
+      end
+    end
+  end
+
+  describe "Former members page" do
+    before do 
+      visit formers_path
+    end
+
+    let(:heading) { "Former members" }
+    let(:page_title) { "Former members" }
+    let(:all_formers) { Person.where(p_type: "former") }
+
+    it_should_behave_like "all static pages"
+    it_should_behave_like "all people pages"
+    it { should have_title("Former members") }
+
+    it "lists all the grad students" do
+      all_formers.each do |person|
+        expect(page).to have_selector('li', text: person.name)
+      end
+    end
+  end
+
 end
