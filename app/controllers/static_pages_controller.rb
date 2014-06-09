@@ -9,6 +9,10 @@ class StaticPagesController < ApplicationController
   end
 
   def people
+    @grads = Person.where(p_type: "grad")
+    @undergrads = Person.where(p_type: "undergrad")
+    @collabs = Person.where(p_type: "collab")
+    @formers = Person.where(p_type: "former")
   end
 
   def research

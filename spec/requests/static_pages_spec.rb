@@ -1,6 +1,17 @@
 require 'spec_helper'
 
 describe "Static pages" do
+  before do
+    Person.create(name: "Foo Grad", email: "foo_grad@thing.edu",
+                  p_type: "grad", info: lorem)
+    Person.create(name: "Undergrad Foo", email: "undergrad@thing.edu",
+                  p_type: "undergrad", info: lorem)
+    Person.create(name: "Collab Orator", email: "collab_man@thing.edu",
+                  p_type: "collab", info: lorem)
+    Person.create(name: "Old Member", email: "old_guy@thing.edu",
+                  p_type: "former", info: lorem)
+  end
+  
   subject { page }
 
   it "should have the right links on the layout" do
@@ -41,5 +52,24 @@ describe "Static pages" do
     it_should_behave_like "all static pages"
 
     it { should_not have_title('| VEIL') }
+  end
+
+  describe "People page" do
+    before do 
+      visit people_path
+    end
+
+    let(:heading) { 'People' }
+    let(:page_title) { 'People' }
+    let(:all_people) { Person.all }
+
+    it_should_behave_like "all static pages"
+    it { should have_title('People') }
+
+    it "lists all the people" do
+      all_people.each do |person|
+        expect(page).to have_selector('p', text: person.name)
+      end
+    end
   end
 end

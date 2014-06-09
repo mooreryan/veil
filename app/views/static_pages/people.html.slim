@@ -1,2 +1,65 @@
 - provide(:title, 'People')
-h1 People
+
+.row
+  h1 People
+
+.row
+  .medium-8.large-8.columns
+    .row
+      h2 Grad students
+    - @grads.each do |grad|
+      .row
+        .large-4.columns
+          p
+            img src = kitty
+        .large-8.columns
+          p 
+            ul
+              li = grad.name
+              li = mail_to grad.email
+          p = grad.info
+
+    .row
+      h2 Undergrad interns
+    - @undergrads.each do |undergrad|
+      .row
+        .large-4.columns
+          p
+            img src = kitty
+        .large-8.columns
+          p 
+            ul
+              li = undergrad.name
+              li = mail_to undergrad.email
+          p = undergrad.info
+    .row
+      h2 Collaborators
+    - @collabs.each do |collab|
+      .row
+        .large-4.columns
+          p
+            img src = kitty
+        .large-8.columns
+          p 
+            ul
+              li = collab.name
+              li = mail_to collab.email
+          p = collab.info
+    .row
+      h2 Former members
+    - @formers.each do |former|
+      .row
+        .large-4.columns
+          p
+            img src = kitty
+        .large-8.columns
+          p
+            ul
+              li = former.name
+              li = mail_to former.email
+          p = former.info
+  .medium-4.large-4.columns
+    .panel
+      h3 People
+      p = lorem
+      p = lorem

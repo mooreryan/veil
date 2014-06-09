@@ -15,4 +15,9 @@ module ApplicationHelper
     s2[0] = s2[0].downcase
     s << s2
   end
+
+  def kitty
+    n = rand(9) + 1
+    "http://lorempixel.com/400/600/cats/#{n}"
+  end
 end
