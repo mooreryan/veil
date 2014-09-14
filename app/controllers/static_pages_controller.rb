@@ -9,26 +9,26 @@ class StaticPagesController < ApplicationController
   end
 
   def people
-    @grads = Person.where(p_type: "grad")
-    @undergrads = Person.where(p_type: "undergrad")
-    @collabs = Person.where(p_type: "collab")
-    @formers = Person.where(p_type: "former")
+    @grads = Person.where(p_type: "grad").sort_by(&:name)
+    @undergrads = Person.where(p_type: "undergrad").sort_by(&:name)
+    @collabs = Person.where(p_type: "collab").sort_by(&:name)
+    @formers = Person.where(p_type: "former").sort_by(&:name)
   end
 
   def grads
-    @grads = Person.where(p_type: "grad")
+    @grads = Person.where(p_type: "grad").sort_by(&:name)
   end
 
   def undergrads
-    @undergrads = Person.where(p_type: "undergrad")
+    @undergrads = Person.where(p_type: "undergrad").sort_by(&:name)
   end
 
   def collabs
-    @collabs = Person.where(p_type: "collab")
+    @collabs = Person.where(p_type: "collab").sort_by(&:name)
   end
 
   def formers
-    @formers = Person.where(p_type: "former")
+    @formers = Person.where(p_type: "former").sort_by(&:name)
   end
 
   def research

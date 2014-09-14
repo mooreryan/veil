@@ -45,4 +45,16 @@ describe Person do
       end
     end
   end
+
+  describe "when p_type format is invalid" do
+    it "should be invalid" do
+      pending
+    end
+  end
+
+  describe "when p_type format is valid" do
+    it "should be valid" do
+      pending
+    end
+  end
 end
