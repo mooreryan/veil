@@ -54,3 +54,4 @@ end
 gem 'slim-rails'
 gem 'foundation-rails'
 gem 'betterlorem'
+gem 'annotate', '~> 2.6.5'

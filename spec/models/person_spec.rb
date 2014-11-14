@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: people
+#
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  email      :string(255)
+#  p_type     :string(255)
+#  info       :text
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 require 'spec_helper'
 
 describe Person do
