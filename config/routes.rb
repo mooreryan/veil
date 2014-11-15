@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   match '/contact', to: 'static_pages#contact', via: :get
 
   match '/people', to: 'static_pages#people', via: :get
+  match '/faculty', to: 'static_pages#faculty', via: :get
   match '/grads', to: 'static_pages#grads', via: :get
   match '/collabs', to: 'static_pages#collabs', via: :get
   match '/undergrads', to: 'static_pages#undergrads', via: :get

@@ -141,6 +141,27 @@ describe "Static pages" do
     end
   end
 
+  describe "Faculty page" do
+    before do 
+      visit faculty_path
+    end
+
+    let(:heading) { "Faculty" }
+    let(:page_title) { "Faculty" }
+    let(:faculty) { Person.where(p_type: "faculty") }
+
+    it_should_behave_like "all static pages"
+    it_should_behave_like "all people pages"
+    it { should have_title("Faculty") }
+
+    it "lists all the faculty" do
+      faculty.each do |person|
+        expect(page).to have_selector('li', text: person.name)
+      end
+    end
+  end
+
+  
   describe "Grad students page" do
     before do 
       visit grads_path
