@@ -13,5 +13,5 @@
 require 'spec_helper'
 
 describe Publication do
-  pending "add some examples to (or delete) #{__FILE__}"
+  pending "citation field should be unique"
 end

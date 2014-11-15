@@ -51,6 +51,9 @@ class StaticPagesController < ApplicationController
   end
 
   def publications
+    @publications = Publication.all.sort_by do |publication|
+      publication.citation.downcase
+    end
   end
 
   def pictures
