@@ -54,6 +54,8 @@ class StaticPagesController < ApplicationController
     @publications = Publication.all.sort_by do |publication|
       publication.citation.downcase
     end
+
+    @years = @publications.map { |p| p.year }.uniq
   end
 
   def pictures

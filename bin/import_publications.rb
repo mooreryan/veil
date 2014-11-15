@@ -3,7 +3,7 @@
 def import_publications(fname)
   File.open(fname, 'r').each_line do |line|
     unless line.start_with?('authors')
-      authors, title, journal, date, doi, pmid, citation, link, info = line.chomp.split("\t")
+      authors, title, journal, date, year, doi, pmid, citation, link, info = line.chomp.split("\t")
 
       publication = Publication.find_by(citation: citation)
 
@@ -12,6 +12,7 @@ def import_publications(fname)
                            title: title,
                            journal: journal,
                            date: date,
+                           year: year,
                            doi: doi,
                            pmid: pmid,
                            citation: citation,
@@ -22,6 +23,7 @@ def import_publications(fname)
                            title: title,
                            journal: journal,
                            date: date,
+                           year: year,
                            doi: doi,
                            pmid: pmid,
                            citation: citation,

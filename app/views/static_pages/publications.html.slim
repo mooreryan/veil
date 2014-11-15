@@ -8,10 +8,12 @@
     p
       = image_tag("http://lorempixel.com/400/730/cats/2")
   .medium-8.large-8.columns
-    - @publications.each do |publication|
-      .panel
-        h3 = publication.title
-        h5 = publication.authors
-        h6 = publication.date
-        p.smaller = publication.info
-        p = link_to(publication.citation, publication.link, target: '_blank')
+    - @years.sort.reverse.each do |year|
+      h2 = year
+      - @publications.select { |p| p.year == year }.each do |publication|
+        .panel
+          h3 = publication.title
+          h5 = publication.authors
+          h6 = publication.date
+          p.smaller = publication.info
+          p = link_to(publication.citation, publication.link, target: '_blank')

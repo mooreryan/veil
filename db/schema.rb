@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141115222033) do
+ActiveRecord::Schema.define(version: 20141115231858) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,16 +28,17 @@ ActiveRecord::Schema.define(version: 20141115222033) do
 
   create_table "publications", force: true do |t|
     t.text     "citation"
-    t.string   "link"
+    t.text     "link"
     t.text     "info"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "authors"
     t.text     "title"
-    t.string   "journal"
-    t.string   "date"
-    t.string   "doi"
-    t.string   "pmid"
+    t.text     "journal"
+    t.text     "date"
+    t.text     "doi"
+    t.text     "pmid"
+    t.integer  "year"
   end
 
   create_table "softwares", force: true do |t|

@@ -25,3 +25,9 @@ command.
 ## Adding software ##
 
 Completely analagous to adding people.
+
+## TODO ##
+
+### Publications ###
+
+Within the year, sort by date.
