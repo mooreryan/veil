@@ -39,7 +39,7 @@
       ul
         - @entries.each do |entry|
           p
-            = link_to(entry.title, entry.url)
+            = link_to(entry.title, entry.url, target: '_blank')
             = " "
             = get_first_author(entry.author)
         
