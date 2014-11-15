@@ -16,7 +16,8 @@ require 'spec_helper'
 describe Person do
   before do
     @person = Person.new(name: "Foo Bar", email: "foobar@baz.edu", 
-                         p_type: "grad", info: lorem)
+                         p_type: "grad", info: lorem,
+                         picture: 'https://flic.kr/p/pLWsEq')
   end
 
   subject { @person }
@@ -25,6 +26,7 @@ describe Person do
   it { should respond_to(:email) }
   it { should respond_to(:p_type) }
   it { should respond_to(:info) }
+  it { should respond_to(:picture) }
 
   it { should be_valid }
 
@@ -59,7 +61,14 @@ describe Person do
     end
   end
 
+  describe "when email is duplicated" do
+    it "should be invalid" do
+      pending
+    end
+  end
+
   describe "when p_type format is invalid" do
+    # acceptable: grad, undergrad, former, collab, pi
     it "should be invalid" do
       pending
     end

@@ -10,6 +10,49 @@ describe "Static pages" do
                   p_type: "collab", info: lorem)
     Person.create(name: "Old Member", email: "old_guy@thing.edu",
                   p_type: "former", info: lorem)
+
+    # @person = Person.new(name: "Foo Bar Grad",
+    #                      email: "foobargrad@baz.edu",
+    #                      p_type: "grad",
+    #                      info: lorem)
+    # @person = Person.new(name: "Bar Baz Grad",
+    #                      email: "barbazgrad@baz.edu",
+    #                      p_type: "grad",
+    #                      info: lorem)
+    # @person = Person.new(name: "Foo Bar Undergrad",
+    #                      email: "foobarundergrad@baz.edu",
+    #                      p_type: "undergrad",
+    #                      info: lorem)
+    # @person = Person.new(name: "Bar Baz Undergrad",
+    #                      email: "barbazundergrad@baz.edu",
+    #                      p_type: "undergrad",
+    #                      info: lorem)
+    # @person = Person.new(name: "Foo Bar Collab",
+    #                      email: "foobarcollab@baz.edu",
+    #                      p_type: "collab",
+    #                      info: lorem)
+    # @person = Person.new(name: "Bar Baz Collab",
+    #                      email: "barbazcollab@baz.edu",
+    #                      p_type: "collab",
+    #                      info: lorem)
+    # @person = Person.new(name: "Foo Bar Former",
+    #                      email: "foobarformer@baz.edu",
+    #                      p_type: "former",
+    #                      info: lorem)
+    # @person = Person.new(name: "Bar Baz Former",
+    #                      email: "barbazformer@baz.edu",
+    #                      p_type: "former",
+    #                      info: lorem)
+    # @person = Person.new(name: "Foo Bar Pi",
+    #                      email: "foobarpi@baz.edu",
+    #                      p_type: "pi",
+    #                      info: lorem)
+    # @person = Person.new(name: "Bar Baz Pi",
+    #                      email: "barbazpi@baz.edu",
+    #                      p_type: "pi",
+    #                      info: lorem)
+    
+
   end
   
   subject { page }
@@ -91,6 +134,10 @@ describe "Static pages" do
       all_people.each do |person|
         expect(page).to have_selector('li', text: person.name)
       end
+
+    end
+    it "sorts the people" do
+      pending("The people should be sorted by first letter of first name")
     end
   end
 
