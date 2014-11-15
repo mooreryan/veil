@@ -38,5 +38,8 @@
       h4 RSS feed
       ul
         - @entries.each do |entry|
-          p = link_to(entry.title, entry.url)
+          p
+            = link_to(entry.title, entry.url)
+            = " "
+            = get_first_author(entry.author)
         

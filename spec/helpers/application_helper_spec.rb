@@ -26,4 +26,26 @@ describe ApplicationHelper do
       expect(lorem_rest.first).to match(/[a-z]/)
     end
   end
+
+  describe "get_first_author" do
+    it "parses the first name out of the author list" do
+      authors = 'Sasaki M, Orba Y, Ueno K, Ishii A'
+      expect(get_first_author(authors)).to eq('Sasaki et al.')
+    end
+
+    it "just returns first author if there is only one author" do
+      authors = 'Sasaki MK'
+      expect(get_first_author(authors)).to eq('Sasaki')
+    end
+
+    it "returns the first two last names if only two authors" do
+      authors = 'Sasaki M K, Orba Y'
+      expect(get_first_author(authors)).to eq('Sasaki & Orba')
+    end
+
+    it "doesn't care about white space" do
+      authors = '  Sasaki    M,    Orba  Y    ,     Ueno   K   '
+      expect(get_first_author(authors)).to eq('Sasaki et al.')
+    end
+  end
 end

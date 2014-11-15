@@ -20,4 +20,20 @@ module ApplicationHelper
     n = rand(9) + 1
     "http://lorempixel.com/400/600/cats/#{n}"
   end
+
+  # parse the author names from the PubMed RSS feed
+  def get_first_author(authors)
+    author_list = authors.strip.split(/ *, */)
+    if author_list.length == 1
+      return(author_list.first.split(/ +/).first)
+    elsif author_list.length == 2
+      splits = author_list.map { |author| author.split(/ +/) }
+      first_author_last_name = splits.first.first
+      second_author_last_name = splits.second.first
+      return("#{first_author_last_name} & #{second_author_last_name}")
+    else
+      first_author_last_name = author_list.first.split(/ +/).first
+      return("#{first_author_last_name} et al.")
+    end
+  end
 end
