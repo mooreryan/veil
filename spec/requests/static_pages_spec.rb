@@ -117,6 +117,26 @@ describe "Static pages" do
     it { should_not have_title('| VEIL') }
   end
 
+  describe "Publications page" do
+    before { visit publications_path }
+    let(:heading) { 'Publications' }
+    let(:page_title) { 'Publications' }
+
+    it_should_behave_like "all static pages"
+
+    it { should have_title('Publications') }
+  end
+
+  describe "Software page" do
+    before { visit software_path }
+    let(:heading) { 'Software' }
+    let(:page_title) { 'Software' }
+
+    it_should_behave_like "all static pages"
+
+    it { should have_title('Software') }
+  end
+  
   describe "People page" do
     before do 
       visit people_path
