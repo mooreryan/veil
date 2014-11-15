@@ -29,3 +29,5 @@ def main(fname)
     abort("ERROR: The file: '#{fname}' doesn't exist!")
   end
 end
+
+# main('/Users/ryanmoore/Downloads/software_hehe.txt')

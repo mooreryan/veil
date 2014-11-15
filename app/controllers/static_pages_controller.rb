@@ -42,6 +42,7 @@ class StaticPagesController < ApplicationController
   end 
 
   def software
+    @software = Software.all
   end
 
   def publications
