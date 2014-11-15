@@ -34,6 +34,9 @@
           a.button.radius Click Here!
   .medium-4.large-4.columns
     .panel
-      h3 Sidebar
-      p = lorem
-      p = lorem
+      h3 Current viral research
+      h4 RSS feed
+      ul
+        - @entries.each do |entry|
+          p = link_to(entry.title, entry.url)
+        

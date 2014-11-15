@@ -1,5 +1,12 @@
+require 'feedjira'
+
 class StaticPagesController < ApplicationController
   def home
+    url = 'http://www.ncbi.nlm.nih.gov/entrez/eutils/erss.cgi?rss_guid=1jye2CWYy7V98G0HVAr6FZWvhJYEhcJdZu93YQE77EDqxGCQAj'
+
+    feed = Feedjira::Feed.fetch_and_parse(url)
+    @entries = feed.entries
+
   end
 
   def contact
