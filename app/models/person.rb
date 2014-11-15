@@ -9,6 +9,7 @@
 #  info       :text
 #  created_at :datetime
 #  updated_at :datetime
+#  picture    :string(255)
 #
 
 class Person < ActiveRecord::Base
