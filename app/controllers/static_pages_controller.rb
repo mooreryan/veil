@@ -20,6 +20,7 @@ class StaticPagesController < ApplicationController
     @undergrads = Person.where(p_type: "undergrad").sort_by(&:name)
     @collabs = Person.where(p_type: "collab").sort_by(&:name)
     @formers = Person.where(p_type: "former").sort_by(&:name)
+    @pis = Person.where(p_type: "pi").sort_by(&:name)
   end
 
   def grads
@@ -42,7 +43,7 @@ class StaticPagesController < ApplicationController
   end 
 
   def software
-    @software = Software.all
+    @software = Software.all.sort_by { |software| software.name.downcase }
   end
 
   def publications

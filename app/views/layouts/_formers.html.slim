@@ -1,0 +1,11 @@
+- @formers.each do |former|
+  .row
+    .large-4.columns
+      p
+        = image_tag former.picture
+    .large-8.columns
+      p 
+        ul
+          li = former.name
+          li = mail_to former.email
+      p = former.info

@@ -1,0 +1,11 @@
+- @collabs.each do |collab|
+  .row
+    .large-4.columns
+      p
+        = image_tag collab.picture
+    .large-8.columns
+      p 
+        ul
+          li = collab.name
+          li = mail_to collab.email
+      p = collab.info

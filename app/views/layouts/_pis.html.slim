@@ -1,0 +1,11 @@
+- @pis.each do |pi|
+  .row
+    .large-4.columns
+      p
+        = image_tag pi.picture
+    .large-8.columns
+      p 
+        ul
+          li = pi.name
+          li = mail_to pi.email
+      p = pi.info
