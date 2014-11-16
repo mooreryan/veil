@@ -11,6 +11,7 @@
     - @projects.each do |project|
       .panel
         h3 = project.name
-        p = project.description
+        - project.description.split(/<p>/).each do |paragraph|
+          p = paragraph.strip
 
 
