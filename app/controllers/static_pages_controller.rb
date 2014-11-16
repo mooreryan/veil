@@ -63,5 +63,6 @@ class StaticPagesController < ApplicationController
   end
 
   def links
+    @links = Link.all.sort_by { |link| link.name.downcase }
   end
 end

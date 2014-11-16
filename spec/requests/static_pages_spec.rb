@@ -262,4 +262,12 @@ describe "Static pages" do
     end
   end
 
+  describe "Links page" do
+    pending 'test me'
+  end
+
+  describe "Research page" do
+    pending 'test me'
+  end
+
 end
