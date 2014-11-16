@@ -44,6 +44,7 @@ class StaticPagesController < ApplicationController
   end
 
   def research
+    @projects = Project.all.sort_by { |project| project.name.downcase }
   end 
 
   def software
