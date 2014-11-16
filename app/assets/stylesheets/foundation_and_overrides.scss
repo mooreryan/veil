@@ -10,7 +10,7 @@
 // $rem-base: 16px;
 
 // Allows the use of rem-calc() or lower-bound() in your settings
-@import "foundation/functions";
+// @import "foundation/functions";
 
 // $experimental: true;
 
@@ -1178,7 +1178,7 @@
 
 // Background color for the top bar
 // $topbar-bg-color: #333;
-// $topbar-bg: $topbar-bg-color;
+// $tocpbar-bg: $topbar-bg-color;
 
 // Height and margin
 // $topbar-height: 45px;
@@ -1288,4 +1288,4 @@
 // $range-slider-handle-bg-hover-color: scale-color($primary-color, $lightness: -12%);
 // $range-slider-handle-cursor: pointer;
 
-@import 'foundation';
+// @import 'foundation';

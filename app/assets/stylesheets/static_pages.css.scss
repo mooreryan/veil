@@ -19,14 +19,17 @@
 /*     width: 120px; */
 /* } */
 
+$font-smaller: 80%;
+
 ul {
   list-style-type: none;
 
   p {
-    font-size: 80%;
+    font-size: $font-smaller;
   }
 }
 
 p.smaller {
-  font-size: 80%;
+  font-size: $font-smaller;
 }
+
