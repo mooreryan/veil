@@ -1,11 +1,9 @@
 - @grads.each do |grad|
   .row
     .large-4.columns
-      p
-        = image_tag grad.picture
+      p = image_tag grad.picture
     .large-8.columns
-      p 
-        ul
-          li = grad.name
-          li = mail_to grad.email
-      p = grad.info
+      .panel
+        h3 = grad.name
+        p.smaller = mail_to grad.email
+        p = grad.info

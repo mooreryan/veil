@@ -1,11 +1,9 @@
 - @faculty.each do |faculty|
   .row
     .large-4.columns
-      p
-        = image_tag faculty.picture
+      p = image_tag faculty.picture
     .large-8.columns
-      p 
-        ul
-          li = faculty.name
-          li = mail_to faculty.email
-      p = faculty.info
+      .panel
+        h3 = faculty.name
+        p.smaller = mail_to faculty.email
+        p = faculty.info
